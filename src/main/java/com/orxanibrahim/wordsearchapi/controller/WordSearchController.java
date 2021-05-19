@@ -9,6 +9,8 @@ public class WordSearchController {
 
     @PostMapping
     public String createWordGrid(int gridSize, List<String> words) {
+        int gridSize;
+        char[][] contents;
         return "";
     }
 }
