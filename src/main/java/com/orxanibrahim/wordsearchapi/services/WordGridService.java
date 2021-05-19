@@ -33,7 +33,7 @@ public class WordGridService {
 
         }
 
-        public char [][] fillGrid(int gridSize,List<String> words) {
+        public char [][] generateGrid(int gridSize, List<String> words) {
             final List<Coordinate> coordinates = new ArrayList<>();
             char[][]contents = new char[gridSize][gridSize];
             for (int i = 0; i < gridSize; i++) {
