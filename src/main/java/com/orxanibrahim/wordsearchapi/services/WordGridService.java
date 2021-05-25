@@ -133,37 +133,43 @@ public class WordGridService {
                 case HORIZONTAL:
                     if (coordinate.y + wordLength > gridSize) return false;
                     for (int i = 0; i < wordLength; i++) {
-                        if (contents[coordinate.x][coordinate.y + i] != '_') return false;
+                        char letter = contents[coordinate.x][coordinate.y + i];
+                        if ( letter!= '_'&& letter != word.charAt(i)) return false;
                     }
                     break;
                 case VERTICAL:
                     if (coordinate.x + wordLength > gridSize) return false;
                     for (int i = 0; i < wordLength; i++) {
-                        if (contents[coordinate.x + i][coordinate.y] != '_') return false;
+                        char letter = contents[coordinate.x + i][coordinate.y];
+                        if ( letter!= '_'&& letter != word.charAt(i)) return false;
                     }
                     break;
                 case DIAGONAL:
                     if (coordinate.y + wordLength > gridSize || coordinate.x + wordLength > gridSize) return false;
                     for (int i = 0; i < wordLength; i++) {
-                        if (contents[coordinate.x + i][coordinate.y + i] != '_') return false;
+                        char letter = contents[coordinate.x + i][coordinate.y + i];
+                        if ( letter!= '_'&& letter != word.charAt(i)) return false;
                     }
                     break;
                 case HORIZONTAL_INVERSE:
                     if (coordinate.y < wordLength) return false;
                     for (int i = 0; i < wordLength; i++) {
-                        if (contents[coordinate.x][coordinate.y - i] != '_') return false;
+                        char letter = contents[coordinate.x][coordinate.y - i];
+                        if ( letter!= '_'&& letter != word.charAt(i)) return false;
                     }
                     break;
                 case VERTICAL_INVERSE:
                     if (coordinate.x < wordLength) return false;
                     for (int i = 0; i < wordLength; i++) {
-                        if (contents[coordinate.x - i][coordinate.y] != '_') return false;
+                        char letter = contents[coordinate.x - i][coordinate.y];
+                        if ( letter!= '_'&& letter != word.charAt(i)) return false;
                     }
                     break;
                 case DIAGONAL_INVERSE:
                     if (coordinate.y < wordLength || coordinate.x < wordLength) return false;
                     for (int i = 0; i < wordLength; i++) {
-                        if (contents[coordinate.x - i][coordinate.y - i] != '_') return false;
+                        char letter = contents[coordinate.x - i][coordinate.y - i];
+                        if ( letter!= '_'&& letter != word.charAt(i)) return false;
                     }
                     break;
             }
