@@ -42,8 +42,8 @@ public class WordGridService {
                     contents[i][j] = '_';
                 }
             }
-            Collections.shuffle(coordinates);
             for (String word : words) {
+                Collections.shuffle(coordinates);
                 for (Coordinate coordinate : coordinates) {
                     int x = coordinate.x;
                     int y = coordinate.y;
